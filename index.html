@@ -1,61 +1,62 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Piceberg</title>
-
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/github-light.css">
-    <meta name="viewport" content="width=device-width">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-clearmin.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/roboto.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/material-design.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/small-n-flat.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.11/c3.css" rel="stylesheet" type="text/css">
+    <title>Piceberg Freezer Monitoring</title>
   </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1>Piceberg</h1>
-        <p></p>
-
-        <p class="view"><a href="https://github.com/crmackay/piceberg">View the Project on GitHub <small>crmackay/piceberg</small></a></p>
-
-
-        <ul>
-          <li><a href="https://github.com/crmackay/piceberg">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
-
-<div id="demo">Load data here...<div>
-
-<button type="button" onclick="loadDoc()">Load data!</button>
-
-<script>
-function loadDoc() {
-  var xhttp;
-  if (window.XMLHttpRequest) {
-    // code for modern browsers
-    xhttp = new XMLHttpRequest();
-    } else {
-    // code for IE6, IE5
-    xhttp = new ActiveXObject("Microsoft.XMLHTTP");
-  }
-  xhttp.onreadystatechange = function() {
-    if (xhttp.readyState == 4 && xhttp.status == 200) {
-      document.getElementById("demo").innerHTML = xhttp.response.replace(/\n/g, "<br />");
-    }
-  };
-  xhttp.open("GET", "https://crossorigin.me/http://drive.google.com/uc?id=0B9ffTjUEqeFEY0RHRWtMSGJGNUU&export=download", true);
-  xhttp.send();
-}
-</script>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/crmackay">crmackay and gallaghg</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
+  <body class="cm-no-transition cm-1-navbar">
+    <div id="cm-menu">
+      <nav class="cm-navbar cm-navbar-primary">
+        <div class="cm-flex"></div>
+        <div class="btn btn-primary md-menu-white" data-toggle="cm-menu"></div>
+      </nav>
+      <div id="cm-menu-content">
+        <div id="cm-menu-items-wrapper">
+          <div id="cm-menu-scroller">
+            <ul class="cm-menu-items">
+              <li class="active"><a href="#" class="sf-house">This page is active</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
-    <script src="javascripts/scale.fix.js"></script>
-    
+    <header id="cm-header">
+      <nav class="cm-navbar cm-navbar-primary">
+        <div class="btn btn-primary md-menu-white hidden-md hidden-lg" data-toggle="cm-menu"></div>
+        <div class="cm-flex"><h1>Picerberg</h1></div>
+      </nav>
+    </header>
+    <div id="global">
+      <div class="container-fluid">
+        <div class="panel panel-default">
+            <div class="panel-heading">Freezer #1</div>
+
+          <div class="panel-body">
+              <div id="freezer1-chart">
+              </div>
+
+          </div>
+        </div>
+      </div>
+      <footer class="cm-footer"><span class="pull-right">&copy; ACME Inc.</span></footer>
+    </div>
+    <script src="assets/js/lib/jquery-2.1.3.min.js"></script>
+    <script src="assets/js/jquery.mousewheel.min.js"></script>
+    <script src="assets/js/jquery.cookie.min.js"></script>
+    <script src="assets/js/fastclick.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/clearmin.min.js"></script>
+
+    <script src="https://d3js.org/d3.v3.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.11/c3.js"></script>
+    <script src="graph.js"></script>
+    <script src="data.js"></script>
   </body>
 </html>
