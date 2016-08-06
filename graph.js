@@ -1,12 +1,11 @@
 function plot(csvData, location){
-    firstrows = csvData.split("\r\n")
-    lastHours = firstrows.slice(firstrows.length - 5000,firstrows.length)
-    console.log(lastHours.length)
-    condensed = []
+    var firstrows = csvData.split("\r\n")
+    var lastHours = firstrows.slice(firstrows.length - 5000,firstrows.length)
+    var condensed = []
+    var displayTemp = ""
     for (var i = 0; i< lastHours.length; i++) {
 
         var currTemp = lastHours[i].split(",")[1]
-
         if (i === 0 || i === lastHours.length-1) {
             condensed.push(lastHours[i])
         } else {
@@ -16,10 +15,14 @@ function plot(csvData, location){
                 condensed.push(lastHours[i])
             }
         }
-
+        if (currTemp !== undefined) {
+            displayTemp = currTemp
+        }
     }
 
-    console.log(condensed.length)
+    // insert current temp
+    document.getElementById("freezer1-current-temp").innerHTML = displayTemp + "&deg;C"
+
     secondrows = [["time", "temp"]]
     for(var i = 0; i< condensed.length; i++){
         var next = condensed[i].split(",")
