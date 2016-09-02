@@ -5,7 +5,7 @@ function insertData(data, divID){
 }
 
 function getPutData(fileid, location) {
-    var uri_prefix = "https://crossorigin.me/http://drive.google.com/uc?id="
+    var uri_prefix = "http://cors.io/?u=http://drive.google.com/uc?id="
     var uri_suffix = "&export=download"
     uri = uri_prefix+fileid+uri_suffix
     request = new XMLHttpRequest
